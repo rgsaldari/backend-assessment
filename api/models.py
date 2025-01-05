@@ -22,7 +22,7 @@ class Itinerary(models.Model):
     agent = models.ForeignKey('Agent', on_delete=models.CASCADE)
     legs = models.ManyToManyField('Leg', related_name='legs')
     def __str__(self):
-        return f"{self.agent} - {self.agent_rating} - {self.price}"
+        return f"({self.agent} {self.agent_rating}) - {self.price}"
 
 class Leg(models.Model):
     id = models.CharField(max_length=5, default=None, primary_key=True)
