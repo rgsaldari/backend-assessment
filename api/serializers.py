@@ -4,12 +4,12 @@ from .models import Agent,Airline,Itinerary,Leg
 class AgentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Agent
-        fields = '__all__'
+        fields = ['name','rating']
         
 class AirlineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Airline
-        fields = '__all__'
+        fields = ['name','short']
         
 class LegSerializer(serializers.ModelSerializer):
     airline = AirlineSerializer()
@@ -24,4 +24,4 @@ class ItinerarySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Itinerary
-        fields ='__all__' 
+        fields = '__all__'
