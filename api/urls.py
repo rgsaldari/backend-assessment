@@ -13,9 +13,9 @@ urlpatterns = [
 
     # Leg routes
     path('legs/', views.leg_list, name='leg_list'),
-    path('leg/<int:id>/', views.leg_detail, name='leg_detail'),
+    path('leg/<str:id>/', views.leg_detail, name='leg_detail'),
 
     # Itinerary routes
     path('itineraries/', views.itinerary_list, name='itinerary_list'),
-    path('itinerary/<int:id>/', views.itinerary_detail, name='itinerary_detail'),
+    path('itinerary/<str:id>/', views.itinerary_detail, name='itinerary_detail'),
 ]

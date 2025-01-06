@@ -68,9 +68,10 @@ def leg_detail(request, id):
 # Leg List
 @api_view(['GET'])
 def leg_list(request):
-    legs = Leg.objects.all()
-    serializer = LegSerializer(legs, many=True)
-    return Response(serializer.data)
+    if request.method == 'GET':
+        legs = Leg.objects.all()
+        serializer = LegSerializer(legs, many=True)
+        return Response(serializer.data)
 
 
 # Retrieve a single Itinerary (GET request by ID)
@@ -88,10 +89,7 @@ def itinerary_detail(request, id):
 # Itinerary List
 @api_view(['GET'])
 def itinerary_list(request):
-    itineraries = Itinerary.objects.all()
-    serializer = ItinerarySerializer(itineraries, many=True)
-    return Response(serializer.data)
-
-
-    
-
+    if request.method == 'GET':
+        itineraries = Itinerary.objects.all() 
+        serializer = ItinerarySerializer(itineraries, many=True)
+        return Response(serializer.data)
